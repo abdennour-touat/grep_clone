@@ -9,9 +9,6 @@ pub struct Config {
 impl Config {
     pub fn new(mut args: Args) -> Result<Config, &'static str> {
         args.next();
-        if args.len() < 3 {
-            return Err("not enough arguments!");
-        }
         let query = match args.next() {
             Some(q) => q,
             None => return Err("didn't get a query string"),
